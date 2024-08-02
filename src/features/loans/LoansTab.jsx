@@ -20,7 +20,7 @@ export default function LoansTab() {
     ? searchParams.get('loan')
     : undefined;
   const loansTabType = [
-    { value: 'givingLoans', label: 'قەرز دان' },
+    // { value: 'givingLoans', label: 'قەرز دان' },
     { value: 'loans', label: 'قەرزەکان' },
   ];
   const { isLoading, count, loansItem } = useLoanItems();
@@ -66,7 +66,7 @@ export default function LoansTab() {
           <LoansTypeTab />
         </div>
         {/* oversea */}
-        <div className="" tabvalue="givingLoans">
+        {/* <div className="" tabvalue="givingLoans">
           <Row className=" mb-6 !gap-4 " type="horizontal">
             <div className=" flex flex-row flex-wrap gap-4">
               {isAdmin && <AddLoans />}
@@ -102,7 +102,7 @@ export default function LoansTab() {
             totalforfilter={totalforfilter}
             totalforfilterloading={totalforfilterloading}
           />
-        </div>
+        </div> */}
       </TabContent>
     </div>
   );

@@ -20,7 +20,7 @@ export default function LoansTypeTab() {
     ? searchParams.get('childrenTab')
     : undefined;
   const loansTypeOptions = [
-    { value: 'loans', label: 'کەسانی تر' },
+    // { value: 'loans', label: 'کەسانی تر' },
     { value: 'Local', label: 'کڕیاری ناوخۆ' },
     { value: 'Oversea', label: 'کڕیاری دەرەوە' },
     { value: 'company', label: 'شەریکات' },
@@ -96,7 +96,7 @@ export default function LoansTypeTab() {
       />
 
       <TabContent cuurentTab={currentTab}>
-        <div className="" tabvalue="loans">
+        {/* <div className="" tabvalue="loans">
           <div className="mb-5 flex items-center justify-between space-x-8">
             <div className="flex flex-1 items-center justify-between rounded-2xl bg-sky-blue p-3">
               {allLoanItems && USDTOAED && (
@@ -124,7 +124,7 @@ export default function LoansTypeTab() {
             <LoanFilter />
             <Button onClick={() => setShowInvoice(true)}>کەشف حساب</Button>
           </div>
-        </div>
+        </div> */}
         <div className="" tabvalue="Local">
           <div className="mb-5 flex items-center justify-between space-x-8">
             <div className="flex flex-1 items-center justify-between rounded-2xl bg-sky-blue p-3">

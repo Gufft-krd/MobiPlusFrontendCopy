@@ -125,18 +125,21 @@ export default function SingleInvoice({
                       USDTOAED={USDTOAED}
                       data={data}
                       moneyType={moneyType}
+                      personsBalance={personsBalance}
                     />
                   ) : lang === 'ku' ? (
                     <KurdishInvoiceGet
                       USDTOAED={USDTOAED}
                       data={data}
                       moneyType={moneyType}
+                      personsBalance={personsBalance}
                     />
                   ) : lang === 'ar' ? (
                     <ArabicInvoiceGet
                       USDTOAED={USDTOAED}
                       data={data}
                       moneyType={moneyType}
+                      personsBalance={personsBalance}
                     />
                   ) : null}
                 </>
@@ -1579,7 +1582,7 @@ function ArabicSell({ data, moneyType, USDTOAED, personsBalance }) {
   );
 }
 
-function EnglishInvoiceGet({ data, moneyType, USDTOAED }) {
+function EnglishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
   return (
     <>
       <div className="flex h-[383mm]  flex-col font-bold">
@@ -1637,6 +1640,17 @@ function EnglishInvoiceGet({ data, moneyType, USDTOAED }) {
             </p>
           </div>
           <div className="flex flex-col gap-3">
+            <h1 className="text-left  text-5xl">Remaining Money Amount</h1>
+            <p className="text-left text-5xl font-bold">
+              {newFormatCurrency(
+                moneyType === 'AED'
+                  ? personsBalance?.total * USDTOAED - data?.amount * USDTOAED
+                  : personsBalance?.total - data?.amount,
+                moneyType,
+              )}{' '}
+            </p>
+          </div>
+          <div className="flex flex-col gap-3">
             <h1 className="text-left  text-5xl">instead of account</h1>
             <p className="text-left text-5xl font-bold">{data?.seller_name}</p>
           </div>
@@ -1645,7 +1659,7 @@ function EnglishInvoiceGet({ data, moneyType, USDTOAED }) {
             <p className="text-left text-5xl font-bold">{data?.receved_from}</p>
           </div>
         </div>
-        <div className="mt-40 flex flex-row justify-between px-40">
+        <div className="mt-32 flex flex-row justify-between px-40">
           <div className="flex flex-col gap-10">
             <p className="text-center text-5xl">Accountant</p>
             <p className="h-[1px] w-80 bg-black"></p>
@@ -1671,7 +1685,7 @@ function EnglishInvoiceGet({ data, moneyType, USDTOAED }) {
   );
 }
 
-function KurdishInvoiceGet({ data, moneyType, USDTOAED }) {
+function KurdishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
   return (
     <>
       <div className="flex h-[383mm] flex-col font-bold">
@@ -1698,7 +1712,7 @@ function KurdishInvoiceGet({ data, moneyType, USDTOAED }) {
           </div>
           <div className="flex flex-col gap-2">
             <h1 className="text-3xl font-semibold">بڕی پارە</h1>
-            <p className="text-5xl font-bold">
+            <p className=" text-5xl font-bold">
               {newFormatCurrency(
                 moneyType === 'AED' ? data?.amount * USDTOAED : data?.amount,
                 moneyType,
@@ -1729,6 +1743,17 @@ function KurdishInvoiceGet({ data, moneyType, USDTOAED }) {
             </p>
           </div>
           <div className="flex flex-col gap-3">
+            <h1 className="text-right  text-6xl">بڕی پارەی ماوە</h1>
+            <p className="text-right text-5xl font-bold">
+              {newFormatCurrency(
+                moneyType === 'AED'
+                  ? personsBalance?.total * USDTOAED - data?.amount * USDTOAED
+                  : personsBalance?.total - data?.amount,
+                moneyType,
+              )}{' '}
+            </p>
+          </div>
+          <div className="flex flex-col gap-3">
             <h1 className="text-right  text-6xl">لەبری هەژماری </h1>
             <p className="text-right text-5xl font-bold">{data?.seller_name}</p>
           </div>
@@ -1739,7 +1764,7 @@ function KurdishInvoiceGet({ data, moneyType, USDTOAED }) {
             </p>
           </div>
         </div>
-        <div className="mt-40 flex flex-row justify-between px-40">
+        <div className="mt-32 flex flex-row justify-between px-40">
           <div className="flex flex-col gap-10">
             <p className="text-center text-5xl">ژمێریار</p>
             <p className="h-[1px] w-80 bg-black"></p>
@@ -1765,7 +1790,7 @@ function KurdishInvoiceGet({ data, moneyType, USDTOAED }) {
   );
 }
 
-function ArabicInvoiceGet({ data, moneyType, USDTOAED }) {
+function ArabicInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
   return (
     <>
       <div className="flex h-[383mm] flex-col font-bold">
@@ -1823,6 +1848,17 @@ function ArabicInvoiceGet({ data, moneyType, USDTOAED }) {
             </p>
           </div>
           <div className="flex flex-col gap-3">
+            <h1 className="text-right  text-6xl">مقدار المال المتبقي</h1>
+            <p className="text-right text-5xl font-bold">
+              {newFormatCurrency(
+                moneyType === 'AED'
+                  ? personsBalance?.total * USDTOAED - data?.amount * USDTOAED
+                  : personsBalance?.total - data?.amount,
+                moneyType,
+              )}{' '}
+            </p>
+          </div>
+          <div className="flex flex-col gap-3">
             <h1 className="text-right  text-6xl">بدلا من حساب </h1>
             <p className="text-right text-5xl font-bold">{data?.seller_name}</p>
           </div>
@@ -1833,7 +1869,7 @@ function ArabicInvoiceGet({ data, moneyType, USDTOAED }) {
             </p>
           </div>
         </div>
-        <div className="mt-40 flex flex-row justify-between px-40">
+        <div className="mt-32 flex flex-row justify-between px-40">
           <div className="flex flex-col gap-10">
             <p className="text-center text-5xl">محاسب</p>
             <p className="h-[1px] w-80 bg-black"></p>

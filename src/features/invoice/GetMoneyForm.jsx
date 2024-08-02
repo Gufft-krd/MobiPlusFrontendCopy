@@ -15,6 +15,7 @@ import { useForm } from 'react-hook-form';
 import Form from '../../ui/Form';
 import { useAddSellerTransactionItem } from './useAddSellerTransactionItem';
 import { useGetLastItem } from './useGetLastItem';
+import { useGetPersonTotal } from './useGetPersonTotal';
 export default function GetMoneyForm() {
   const { register, handleSubmit, formState, getValues, reset } = useForm();
   const { errors, isValid } = formState;
@@ -29,6 +30,7 @@ export default function GetMoneyForm() {
   const [moneyDrop, setMoneyDrop] = useState(false);
   const [accDrop, setAccDrop] = useState(false);
   const { isAdding, addTransaction } = useAddSellerTransactionItem();
+  const { isLoading: userTotaoLoding, sellerData } = useGetPersonTotal();
   const [langPlaceholder, setLangPlaceHolder] = useState('زمان هەڵبژێرە');
   const [moneyPlaceholder, setMoneyPlaceHolder] =
     useState('جۆری دراو هەڵبژێرە');
@@ -104,6 +106,7 @@ export default function GetMoneyForm() {
             setLang={setLang}
             setMoney={setMoney}
             setShowInvoice={setShowInvoice}
+            personsBalance={sellerData}
           />
         </div>
       )}

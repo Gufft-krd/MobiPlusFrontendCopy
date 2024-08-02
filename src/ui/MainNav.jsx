@@ -13,7 +13,7 @@ import NavButton from './NavButton';
 function MainNav() {
   return (
     <nav className="flex w-full flex-col items-center">
-      <ul className="mt-10  2xl:mt-16 flex flex-col gap-5 2xl:gap-8">
+      <ul className="mt-10  flex flex-col gap-5 2xl:mt-16 2xl:gap-8">
         <li>
           <NavButton to="/dashboard">
             <HiChartPie />
@@ -44,11 +44,11 @@ function MainNav() {
           </NavButton>
         </li>
 
-        <li>
+        {/* <li>
           <NavButton to="/ownership">
             <HiMiniPresentationChartLine />
           </NavButton>
-        </li>
+        </li> */}
 
         <li>
           <NavButton to="/Inventory">

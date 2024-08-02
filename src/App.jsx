@@ -20,7 +20,6 @@ import Loans from './pages/Loans.jsx';
 import Ownership from './pages/Ownership.jsx';
 import Settings from './pages/Settings.jsx';
 
-
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
@@ -72,11 +71,10 @@ function App() {
 
             <Route path="receipt" element={<Invoice />} />
 
-
             <Route path="SingleInvoice/:id" element={<SingleInvoice />} />
 
             <Route path="loans" element={<Loans />} />
-            <Route path="ownership" element={<Ownership />} />
+            {/* <Route path="ownership" element={<Ownership />} /> */}
             <Route path="settings" element={<Settings />} />
           </Route>
 

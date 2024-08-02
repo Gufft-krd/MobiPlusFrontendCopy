@@ -14,7 +14,6 @@ import UsersTab from './UsersTab';
 import { useUserforButtons } from '../authentication/useUserForButtons';
 
 export default function SettingTab() {
-
   const [searchParams, setSearchParams] = useSearchParams();
   const searchParamsValue = searchParams.get('loan')
     ? searchParams.get('loan')
@@ -43,7 +42,7 @@ export default function SettingTab() {
 
   // if (count == 0) return <Empty message="هیچ قەرزێک نییە" />
   const loansTabType = [
-    { value: 'datas', label: 'داتاکان' },
+    // { value: 'datas', label: 'داتاکان' },
     { value: 'accounts', label: 'هەژمارەکان' },
     { value: 'addingAccount', label: 'زیاد کردنی بەکارهێنەر' },
     { value: 'myAccount', label: 'هەژمارەکەم' },
@@ -70,7 +69,7 @@ export default function SettingTab() {
         <div className="" tabvalue="accounts">
           <UsersTab isAdmin={isAdmin} />
         </div>
-        <div className="" tabvalue="datas">
+        {/* <div className="" tabvalue="datas">
           <h2 className="mb-5">پارەی ناو سندووق</h2>
           <VaultTable
             isAdmin={isAdmin}
@@ -84,7 +83,7 @@ export default function SettingTab() {
             isLoading={isLoading}
             totalforfilter={allvaults}
           />
-        </div>
+        </div> */}
       </TabContent>
     </div>
   );

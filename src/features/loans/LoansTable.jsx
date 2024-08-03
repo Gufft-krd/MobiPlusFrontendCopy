@@ -15,7 +15,7 @@ function LoansTable({ loansItem, isLoading, count }) {
   return (
     <Table columns="grid-cols-3">
       <Table.Header>
-        <div>بڕی پارە بە درهەم</div>
+        <div>بڕی پارە بە دینار</div>
         <div>بڕی پارە بە دۆلار</div>
         <div>ناوی شەریکە</div>
       </Table.Header>

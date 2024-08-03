@@ -104,7 +104,7 @@ export default function LoansTypeTab() {
                   {newFormatCurrency(allLoanItems[0]?.total_value * USDTOAED)} 
                 </div>
               )}
-              <div className="">کۆی قەرز بە درهەم</div>
+              <div className="">کۆی قەرز بە دینار</div>
             </div>
             <div className="flex flex-1 items-center justify-between rounded-2xl bg-sky-blue p-3">
               {allLoanItems && (
@@ -133,7 +133,7 @@ export default function LoansTypeTab() {
                   {allLoanItems[0]?.total_value * USDTOAED}
                 </div>
               )}
-              <div className="">کۆی قەرز بە درهەم</div>
+              <div className="">کۆی قەرز بە دینار</div>
             </div>
             <div className="flex flex-1 items-center justify-between rounded-2xl bg-sky-blue p-3">
               {allLoanItems && (
@@ -163,7 +163,7 @@ export default function LoansTypeTab() {
                   {allLoanItems[0]?.total_value * USDTOAED}
                 </div>
               )}
-              <div className="">کۆی قەرز بە درهەم</div>
+              <div className="">کۆی قەرز بە دینار</div>
             </div>
             <div className="flex flex-1 items-center justify-between rounded-2xl bg-sky-blue p-3">
               {allLoanItems && (
@@ -192,7 +192,7 @@ export default function LoansTypeTab() {
                   {allLoanItems[0]?.total_value * USDTOAED}
                 </div>
               )}
-              <div className="">کۆی قەرز بە درهەم</div>
+              <div className="">کۆی قەرز بە دینار</div>
             </div>
             <div className="flex flex-1 items-center justify-between rounded-2xl bg-sky-blue p-3">
               {allLoanItems && (

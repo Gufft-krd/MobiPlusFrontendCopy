@@ -15,7 +15,7 @@ function ExchangeRate() {
     <Heading as="h2" className="ltr flex-shrink-0">
       <div className="flex items-center">
         <div className="">
-          100 USD = {isLoading ? <SpinnerMini /> : `${100 * USDTOAED} AED`}
+          100 USD = {isLoading ? <SpinnerMini /> : `${100 * USDTOAED} IQD`}
         </div>
         <div className="ml-2">
           <Modal>

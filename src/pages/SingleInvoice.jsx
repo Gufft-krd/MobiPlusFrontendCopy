@@ -296,7 +296,7 @@ function EnglishCompany({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-3xl font-semibold">Balance Due</h1>
             <p className="ltr text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED'
+                moneyType === 'IQD'
                   ? (data?.total_money - data?.money_number) * USDTOAED
                   : data?.total_money - data?.money_number,
                 moneyType,
@@ -350,7 +350,7 @@ function EnglishCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   </th>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? data?.total_money * USDTOAED
                         : data?.total_money,
                       moneyType,
@@ -358,7 +358,7 @@ function EnglishCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   </td>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? data?.money_number * USDTOAED
                         : data?.money_number,
                       moneyType,
@@ -366,7 +366,7 @@ function EnglishCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   </td>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? (data?.total_money - data?.money_number) * USDTOAED
                         : data?.total_money - data?.money_number,
                       moneyType,
@@ -381,7 +381,7 @@ function EnglishCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   <td className="px-6 py-4 text-center font-bold">Sub total</td>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? (data?.total_money - data?.money_number) * USDTOAED
                         : data?.total_money - data?.money_number,
                       moneyType,
@@ -398,7 +398,7 @@ function EnglishCompany({ data, moneyType, USDTOAED, personsBalance }) {
               <p className="w-1/2 text-right text-3xl">: Total </p>
               <p className="ltr text-3xl font-bold">
                 {newFormatCurrency(
-                  moneyType === 'AED'
+                  moneyType === 'IQD'
                     ? data?.total_money * USDTOAED
                     : data?.total_money,
                   moneyType,
@@ -411,7 +411,7 @@ function EnglishCompany({ data, moneyType, USDTOAED, personsBalance }) {
               </p>
               <p className="ltr text-3xl font-bold">
                 {newFormatCurrency(
-                  (moneyType === 'AED'
+                  (moneyType === 'IQD'
                     ? (data?.total_money - data?.money_number) * USDTOAED
                     : data?.total_money - data?.money_number) +
                     personsBalance?.total,
@@ -424,7 +424,7 @@ function EnglishCompany({ data, moneyType, USDTOAED, personsBalance }) {
               <p className="text-3xl font-bold">
                 {data?.total_money - data?.money_number < 0 ? 'Negative ' : ''}
                 {writtenNumber(
-                  moneyType === 'AED'
+                  moneyType === 'IQD'
                     ? Math.abs(
                         (data?.total_money - data?.money_number) * USDTOAED,
                       )
@@ -486,7 +486,7 @@ function KurdishCompany({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-3xl font-semibold">بڕی پارە</h1>
             <p className="ltr text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED'
+                moneyType === 'IQD'
                   ? (data?.total_money - data?.money_number) * USDTOAED
                   : data?.total_money - data?.money_number,
                 moneyType,
@@ -541,7 +541,7 @@ function KurdishCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   </th>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? data?.total_money * USDTOAED
                         : data?.total_money,
                       moneyType,
@@ -549,7 +549,7 @@ function KurdishCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   </td>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? data?.money_number * USDTOAED
                         : data?.money_number,
                       moneyType,
@@ -557,7 +557,7 @@ function KurdishCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   </td>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? (data?.total_money - data?.money_number) * USDTOAED
                         : data?.total_money - data?.money_number,
                       moneyType,
@@ -572,7 +572,7 @@ function KurdishCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   <td className="px-6 py-4 text-center font-bold">کۆی نرخ</td>
                   <td className="ltr px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? (data?.total_money - data?.money_number) * USDTOAED
                         : data?.total_money - data?.money_number,
                       moneyType,
@@ -589,7 +589,7 @@ function KurdishCompany({ data, moneyType, USDTOAED, personsBalance }) {
               <p className="w-1/2 text-right text-3xl">: کۆی گشتی </p>
               <p className="ltr text-3xl font-bold">
                 {newFormatCurrency(
-                  moneyType === 'AED'
+                  moneyType === 'IQD'
                     ? data?.total_money * USDTOAED
                     : data?.total_money,
                   moneyType,
@@ -600,7 +600,7 @@ function KurdishCompany({ data, moneyType, USDTOAED, personsBalance }) {
               <p className="w-1/2 text-right text-3xl font-bold">: باڵانس</p>
               <p className="ltr text-3xl font-bold">
                 {newFormatCurrency(
-                  (moneyType === 'AED'
+                  (moneyType === 'IQD'
                     ? (data?.total_money - data?.money_number) * USDTOAED
                     : data?.total_money - data?.money_number) +
                     personsBalance?.total,
@@ -666,7 +666,7 @@ function ArabicCompany({ data, moneyType, USDTOAED, personsBalance }) {
             <p className="text-5xl font-bold">
               {' '}
               {newFormatCurrency(
-                moneyType === 'AED'
+                moneyType === 'IQD'
                   ? (data?.total_money - data?.money_number) * USDTOAED
                   : data?.total_money - data?.money_number,
                 moneyType,
@@ -721,7 +721,7 @@ function ArabicCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   </th>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? data?.total_money * USDTOAED
                         : data?.total_money,
                       moneyType,
@@ -729,7 +729,7 @@ function ArabicCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   </td>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? data?.money_number * USDTOAED
                         : data?.money_number,
                       moneyType,
@@ -737,7 +737,7 @@ function ArabicCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   </td>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? (data?.total_money - data?.money_number) * USDTOAED
                         : data?.total_money - data?.money_number,
                       moneyType,
@@ -754,7 +754,7 @@ function ArabicCompany({ data, moneyType, USDTOAED, personsBalance }) {
                   </td>
                   <td className="px-6 py-4 text-center">
                     {newFormatCurrency(
-                      moneyType === 'AED'
+                      moneyType === 'IQD'
                         ? (data?.total_money - data?.money_number) * USDTOAED
                         : data?.total_money - data?.money_number,
                       moneyType,
@@ -771,7 +771,7 @@ function ArabicCompany({ data, moneyType, USDTOAED, personsBalance }) {
               <p className="w-1/2 text-right text-3xl ">: المجموع </p>
               <p className="text-3xl font-bold">
                 {newFormatCurrency(
-                  moneyType === 'AED'
+                  moneyType === 'IQD'
                     ? data?.total_money * USDTOAED
                     : data?.total_money,
                   moneyType,
@@ -782,7 +782,7 @@ function ArabicCompany({ data, moneyType, USDTOAED, personsBalance }) {
               <p className="w-1/2 text-right text-3xl ">: الرصيد</p>
               <p className="text-3xl font-bold">
                 {newFormatCurrency(
-                  (moneyType === 'AED'
+                  (moneyType === 'IQD'
                     ? (data?.total_money - data?.money_number) * USDTOAED
                     : data?.total_money - data?.money_number) +
                     personsBalance?.total,
@@ -797,7 +797,7 @@ function ArabicCompany({ data, moneyType, USDTOAED, personsBalance }) {
               <p className="text-3xl font-bold">
                 {data?.total_money - data?.money_number < 0 ? 'سالب ' : ''}
                 {writtenNumber(
-                  moneyType === 'AED'
+                  moneyType === 'IQD'
                     ? Math.abs(
                         (data?.total_money - data?.money_number) * USDTOAED,
                       )
@@ -881,7 +881,7 @@ function EnglishSell({ data, moneyType, USDTOAED, personsBalance }) {
                 <h1 className="text-3xl font-semibold">Balance Due</h1>
                 <p className="text-5xl font-bold">
                   {newFormatCurrency(
-                    moneyType === 'AED' ? data?.total * USDTOAED : data?.total,
+                    moneyType === 'IQD' ? data?.total * USDTOAED : data?.total,
                     moneyType,
                   )}
                 </p>
@@ -949,7 +949,7 @@ function EnglishSell({ data, moneyType, USDTOAED, personsBalance }) {
                             </td>
                             <td className="px-6 py-4 text-center">
                               {formatCurrencyWithoutRound(
-                                moneyType === 'AED'
+                                moneyType === 'IQD'
                                   ? item?.item_price * USDTOAED
                                   : item?.item_price,
                                 moneyType,
@@ -957,7 +957,7 @@ function EnglishSell({ data, moneyType, USDTOAED, personsBalance }) {
                             </td>
                             <td className="px-6 py-4 text-center">
                               {formatCurrencyWithoutRound(
-                                moneyType === 'AED'
+                                moneyType === 'IQD'
                                   ? item?.total_price * USDTOAED
                                   : item?.total_price,
                                 moneyType,
@@ -978,7 +978,7 @@ function EnglishSell({ data, moneyType, USDTOAED, personsBalance }) {
                           </td>
                           <td className="px-6 py-4 text-center">
                             {formatCurrencyWithoutRound(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? totalPrice * USDTOAED
                                 : totalPrice,
                               moneyType,
@@ -1014,7 +1014,7 @@ function EnglishSell({ data, moneyType, USDTOAED, personsBalance }) {
                     <p className="w-1/2 text-right text-3xl ">: Total bill </p>
                     <p className="ltr text-3xl font-bold">
                       {newFormatCurrency(
-                        moneyType === 'AED'
+                        moneyType === 'IQD'
                           ? totalPrice * USDTOAED
                           : totalPrice,
                         moneyType,
@@ -1027,10 +1027,10 @@ function EnglishSell({ data, moneyType, USDTOAED, personsBalance }) {
                     </p>
                     <p className="ltr text-3xl font-bold">
                       {newFormatCurrency(
-                        (moneyType === 'AED'
+                        (moneyType === 'IQD'
                           ? totalPrice * USDTOAED
                           : totalPrice) +
-                          (moneyType === 'AED'
+                          (moneyType === 'IQD'
                             ? personsBalance?.total * USDTOAED
                             : personsBalance?.total),
                         moneyType,
@@ -1042,7 +1042,7 @@ function EnglishSell({ data, moneyType, USDTOAED, personsBalance }) {
                     <p className="text-3xl font-bold">
                       {totalPrice < 0 ? 'Negative ' : ''}
                       {writtenNumber(
-                        moneyType === 'AED'
+                        moneyType === 'IQD'
                           ? Math.abs(totalPrice * USDTOAED)
                           : Math.abs(totalPrice),
                         { lang: 'en' },
@@ -1128,7 +1128,7 @@ function KurdishSell({ data, moneyType, USDTOAED, personsBalance }) {
                 <h1 className="text-3xl font-semibold">بڕی پارە</h1>
                 <p className="ltr text-5xl font-bold">
                   {newFormatCurrency(
-                    moneyType === 'AED' ? data?.total * USDTOAED : data?.total,
+                    moneyType === 'IQD' ? data?.total * USDTOAED : data?.total,
                     moneyType,
                   )}{' '}
                 </p>
@@ -1216,7 +1216,7 @@ function KurdishSell({ data, moneyType, USDTOAED, personsBalance }) {
                             </td>
                             <td className="px-6 py-4 text-center">
                               {formatCurrencyWithoutRound(
-                                moneyType === 'AED'
+                                moneyType === 'IQD'
                                   ? item?.item_price * USDTOAED
                                   : item?.item_price,
                                 moneyType,
@@ -1224,7 +1224,7 @@ function KurdishSell({ data, moneyType, USDTOAED, personsBalance }) {
                             </td>
                             <td className="px-6 py-4 text-center">
                               {formatCurrencyWithoutRound(
-                                moneyType === 'AED'
+                                moneyType === 'IQD'
                                   ? item?.total_price * USDTOAED
                                   : item?.total_price,
                                 moneyType,
@@ -1244,7 +1244,7 @@ function KurdishSell({ data, moneyType, USDTOAED, personsBalance }) {
                           </td>
                           <td className="px-6 py-4 text-center">
                             {formatCurrencyWithoutRound(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? totalPrice * USDTOAED
                                 : totalPrice,
                               moneyType,
@@ -1282,7 +1282,7 @@ function KurdishSell({ data, moneyType, USDTOAED, personsBalance }) {
                     </p>
                     <p className="ltr text-3xl font-bold">
                       {newFormatCurrency(
-                        moneyType === 'AED'
+                        moneyType === 'IQD'
                           ? totalPrice * USDTOAED
                           : totalPrice,
                         moneyType,
@@ -1295,10 +1295,10 @@ function KurdishSell({ data, moneyType, USDTOAED, personsBalance }) {
                     </p>
                     <p className="ltr text-3xl font-bold">
                       {newFormatCurrency(
-                        (moneyType === 'AED'
+                        (moneyType === 'IQD'
                           ? totalPrice * USDTOAED
                           : totalPrice) +
-                          (moneyType === 'AED'
+                          (moneyType === 'IQD'
                             ? personsBalance?.total * USDTOAED
                             : personsBalance?.total),
                         moneyType,
@@ -1388,7 +1388,7 @@ function ArabicSell({ data, moneyType, USDTOAED, personsBalance }) {
                 <h1 className="text-3xl font-semibold">مبلغ</h1>
                 <p className="text-5xl font-bold">
                   {newFormatCurrency(
-                    moneyType === 'AED' ? data?.total * USDTOAED : data?.total,
+                    moneyType === 'IQD' ? data?.total * USDTOAED : data?.total,
                     moneyType,
                   )}{' '}
                 </p>
@@ -1460,7 +1460,7 @@ function ArabicSell({ data, moneyType, USDTOAED, personsBalance }) {
                             <td className="px-6 py-4 text-center">
                               {' '}
                               {formatCurrencyWithoutRound(
-                                moneyType === 'AED'
+                                moneyType === 'IQD'
                                   ? item?.item_price * USDTOAED
                                   : item?.item_price,
                                 moneyType,
@@ -1468,7 +1468,7 @@ function ArabicSell({ data, moneyType, USDTOAED, personsBalance }) {
                             </td>
                             <td className="px-6 py-4 text-center">
                               {formatCurrencyWithoutRound(
-                                moneyType === 'AED'
+                                moneyType === 'IQD'
                                   ? item?.total_price * USDTOAED
                                   : item?.total_price,
                                 moneyType,
@@ -1488,7 +1488,7 @@ function ArabicSell({ data, moneyType, USDTOAED, personsBalance }) {
                           </td>
                           <td className="px-6 py-4 text-center">
                             {formatCurrencyWithoutRound(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? totalPrice * USDTOAED
                                 : totalPrice,
                               moneyType,
@@ -1524,7 +1524,7 @@ function ArabicSell({ data, moneyType, USDTOAED, personsBalance }) {
                     <p className="w-1/2 text-right text-3xl">: المجموع </p>
                     <p className="ltr text-3xl font-bold">
                       {newFormatCurrency(
-                        moneyType === 'AED'
+                        moneyType === 'IQD'
                           ? totalPrice * USDTOAED
                           : totalPrice,
                         moneyType,
@@ -1537,10 +1537,10 @@ function ArabicSell({ data, moneyType, USDTOAED, personsBalance }) {
                     </p>
                     <p className="ltr text-3xl font-bold">
                       {newFormatCurrency(
-                        (moneyType === 'AED'
+                        (moneyType === 'IQD'
                           ? totalPrice * USDTOAED
                           : totalPrice) +
-                          (moneyType === 'AED'
+                          (moneyType === 'IQD'
                             ? personsBalance?.total * USDTOAED
                             : personsBalance?.total),
                         moneyType,
@@ -1554,7 +1554,7 @@ function ArabicSell({ data, moneyType, USDTOAED, personsBalance }) {
                     <p className="text-3xl font-bold">
                       {totalPrice < 0 ? 'سالب ' : ''}
                       {writtenNumber(
-                        moneyType === 'AED'
+                        moneyType === 'IQD'
                           ? Math.abs(totalPrice * USDTOAED)
                           : Math.abs(totalPrice),
                         { lang: 'ar' },
@@ -1613,7 +1613,7 @@ function EnglishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-3xl font-semibold">Balance Due</h1>
             <p className="ltr text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED' ? data?.amount * USDTOAED : data?.amount,
+                moneyType === 'IQD' ? data?.amount * USDTOAED : data?.amount,
                 moneyType,
               )}{' '}
             </p>
@@ -1634,7 +1634,7 @@ function EnglishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-left  text-5xl">Balance Due</h1>
             <p className="ltr text-left text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED' ? data?.amount * USDTOAED : data?.amount,
+                moneyType === 'IQD' ? data?.amount * USDTOAED : data?.amount,
                 moneyType,
               )}{' '}
             </p>
@@ -1643,7 +1643,7 @@ function EnglishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-left  text-5xl">Remaining Money Amount</h1>
             <p className="text-left text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED'
+                moneyType === 'IQD'
                   ? personsBalance?.total * USDTOAED - data?.amount * USDTOAED
                   : personsBalance?.total - data?.amount,
                 moneyType,
@@ -1714,7 +1714,7 @@ function KurdishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-3xl font-semibold">بڕی پارە</h1>
             <p className=" text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED' ? data?.amount * USDTOAED : data?.amount,
+                moneyType === 'IQD' ? data?.amount * USDTOAED : data?.amount,
                 moneyType,
               )}{' '}
             </p>
@@ -1737,7 +1737,7 @@ function KurdishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-right  text-6xl">بڕی پارە</h1>
             <p className="text-right text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED' ? data?.amount * USDTOAED : data?.amount,
+                moneyType === 'IQD' ? data?.amount * USDTOAED : data?.amount,
                 moneyType,
               )}{' '}
             </p>
@@ -1746,7 +1746,7 @@ function KurdishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-right  text-6xl">بڕی پارەی ماوە</h1>
             <p className="text-right text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED'
+                moneyType === 'IQD'
                   ? personsBalance?.total * USDTOAED - data?.amount * USDTOAED
                   : personsBalance?.total - data?.amount,
                 moneyType,
@@ -1819,7 +1819,7 @@ function ArabicInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-3xl font-semibold">مبلغ</h1>
             <p className="text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED' ? data?.amount * USDTOAED : data?.amount,
+                moneyType === 'IQD' ? data?.amount * USDTOAED : data?.amount,
                 moneyType,
               )}{' '}
             </p>
@@ -1842,7 +1842,7 @@ function ArabicInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-right  text-6xl">مبلغ</h1>
             <p className="text-right text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED' ? data?.amount * USDTOAED : data?.amount,
+                moneyType === 'IQD' ? data?.amount * USDTOAED : data?.amount,
                 moneyType,
               )}{' '}
             </p>
@@ -1851,7 +1851,7 @@ function ArabicInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-right  text-6xl">مقدار المال المتبقي</h1>
             <p className="text-right text-5xl font-bold">
               {newFormatCurrency(
-                moneyType === 'AED'
+                moneyType === 'IQD'
                   ? personsBalance?.total * USDTOAED - data?.amount * USDTOAED
                   : personsBalance?.total - data?.amount,
                 moneyType,
@@ -1909,7 +1909,7 @@ function EnglishMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
       (total, item) => total + (item.ingoing_purchase - item.outgoing_purchase),
       startAt ? startAt : 0,
     );
-    if (moneyType === 'AED') {
+    if (moneyType === 'IQD') {
       setTotal(totalPurchase * USDTOAED);
     } else {
       setTotal(totalPurchase);
@@ -2025,7 +2025,7 @@ function EnglishMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center   ">
                             {formatCurrencyWithoutRound(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? item?.ingoing_purchase * USDTOAED
                                 : item?.ingoing_purchase,
                               moneyType,
@@ -2033,7 +2033,7 @@ function EnglishMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center   ">
                             {formatCurrencyWithoutRound(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? item?.outgoing_purchase * USDTOAED
                                 : item?.outgoing_purchase,
                               moneyType,
@@ -2041,7 +2041,7 @@ function EnglishMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center   ">
                             {formatCurrencyWithoutRound(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? getTotalForLine(i) * USDTOAED
                                 : getTotalForLine(i),
                               moneyType,
@@ -2077,7 +2077,7 @@ function EnglishMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                     <div className="flex flex-row-reverse justify-between ">
                       <p className="w-1/2 text-right text-3xl ">: Total </p>
                       <p className="ltr text-3xl font-bold">
-                        {Math.round(total)} {moneyType === 'AED' ? 'AED' : '$'}
+                        {Math.round(total)} {moneyType === 'IQD' ? 'IQD' : '$'}
                       </p>
                     </div>
 
@@ -2086,7 +2086,7 @@ function EnglishMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                       <p className="text-3xl font-bold">
                         {Math.round(total) < 0 ? 'Negative ' : ''}
                         {writtenNumber(
-                          moneyType === 'AED'
+                          moneyType === 'IQD'
                             ? Math.abs(total * USDTOAED)
                             : Math.abs(total),
                           { lang: 'en' },
@@ -2127,7 +2127,7 @@ function ArabicMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
       (total, item) => total + (item.ingoing_purchase - item.outgoing_purchase),
       startAt ? startAt : 0,
     );
-    if (moneyType === 'AED') {
+    if (moneyType === 'IQD') {
       setTotal(totalPurchase * USDTOAED);
     } else {
       setTotal(totalPurchase);
@@ -2234,7 +2234,7 @@ function ArabicMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center   ">
                             {newFormatCurrency(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? item?.ingoing_purchase * USDTOAED
                                 : item?.ingoing_purchase,
                               moneyType,
@@ -2242,7 +2242,7 @@ function ArabicMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center   ">
                             {newFormatCurrency(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? item?.outgoing_purchase * USDTOAED
                                 : item?.outgoing_purchase,
                               moneyType,
@@ -2250,7 +2250,7 @@ function ArabicMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center   ">
                             {newFormatCurrency(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? getTotalForLine(i) * USDTOAED
                                 : getTotalForLine(i),
                               moneyType,
@@ -2288,7 +2288,7 @@ function ArabicMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                         : الإجمال سعر{' '}
                       </p>
                       <p className="text-3xl font-bold">
-                        {Math.round(total)} {moneyType === 'AED' ? 'AED' : '$'}
+                        {Math.round(total)} {moneyType === 'IQD' ? 'IQD' : '$'}
                       </p>
                     </div>
 
@@ -2334,7 +2334,7 @@ function KurdishMixed({
       (total, item) => total + (item.ingoing_purchase - item.outgoing_purchase),
       startAt ? startAt : 0,
     );
-    if (moneyType === 'AED') {
+    if (moneyType === 'IQD') {
       setTotal(totalPurchase * USDTOAED);
     } else {
       setTotal(totalPurchase);
@@ -2440,7 +2440,7 @@ function KurdishMixed({
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center  ">
                             {newFormatCurrency(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? item?.ingoing_purchase * USDTOAED
                                 : item?.ingoing_purchase,
                               moneyType,
@@ -2448,7 +2448,7 @@ function KurdishMixed({
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center  ">
                             {newFormatCurrency(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? item?.outgoing_purchase * USDTOAED
                                 : item?.outgoing_purchase,
                               moneyType,
@@ -2456,7 +2456,7 @@ function KurdishMixed({
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center  ">
                             {newFormatCurrency(
-                              moneyType === 'AED'
+                              moneyType === 'IQD'
                                 ? getTotalForLine(i) * USDTOAED
                                 : getTotalForLine(i),
                               moneyType,
@@ -2492,7 +2492,7 @@ function KurdishMixed({
                     <div className="flex flex-row-reverse justify-between ">
                       <p className="w-1/2 text-right text-3xl ">: کۆی گشتی </p>
                       <p className="text-3xl font-bold">
-                        {Math.round(total)} {moneyType === 'AED' ? 'AED' : '$'}
+                        {Math.round(total)} {moneyType === 'IQD' ? 'IQD' : '$'}
                       </p>
                     </div>
 
@@ -2743,7 +2743,7 @@ function AllDebtInvo({ data, USDTOAED }) {
                         بڕی قەرز بە دۆلار
                       </th>
                       <th scope="col" className="w-1/3 px-6 py-3 text-center">
-                        بڕی قەرز بە درهەم
+                        بڕی قەرز بە دینار
                       </th>
                     </tr>
                   </thead>
@@ -2786,7 +2786,7 @@ function AllDebtInvo({ data, USDTOAED }) {
                                 )}
                               </span>
 
-                              <span>AED</span>
+                              <span>IQD</span>
                             </div>
                           </td>
                         </tr>
@@ -2822,7 +2822,7 @@ function AllDebtInvo({ data, USDTOAED }) {
                               ) * USDTOAED,
                             )}
                           </span>
-                          <span>AED</span>
+                          <span>IQD</span>
                         </div>
                       </td>
                     </tr>
@@ -3385,7 +3385,7 @@ function ShareInvoice({
               {/* <div className="flex flex-col gap-2">
                 <h1 className="text-3xl font-semibold">بڕی پارە</h1>
                 <p className="ltr text-5xl font-bold">
-                  {newFormatCurrency(moneyType === 'AED' ? data?.total * USDTOAED : data?.total,moneyType)}{' '}
+                  {newFormatCurrency(moneyType === 'IQD' ? data?.total * USDTOAED : data?.total,moneyType)}{' '}
                   
                 </p>
               </div> */}

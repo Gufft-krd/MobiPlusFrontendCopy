@@ -33,7 +33,7 @@ export default function EditMoney({ onCloseModal, exchangeRate }) {
   }
   return (
     <div className="">
-      <h3 className="mb-5">دیاری کردنی درهەم بەرامبەر دۆلار</h3>
+      <h3 className="mb-5">دیاری کردنی دینار بەرامبەر دۆلار</h3>
       <Form className="!p-1" onSubmit={handleSubmit(onFormSubmitEditMoney)}>
         <div className="flex items-center">
           <div className=" ">
@@ -77,7 +77,7 @@ export default function EditMoney({ onCloseModal, exchangeRate }) {
                   htmlFor="aud_money"
                   className="mt-2 cursor-pointer text-gray-500"
                 >
-                  درهەم
+                  دینار
                 </label>
               </div>
             </FormRowVertical>

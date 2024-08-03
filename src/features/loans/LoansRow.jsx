@@ -21,7 +21,7 @@ function LoansRow({ data }) {
             (data?.npurchase ? data?.npurchase : data?.total || 0) * USDTOAED,
           )}
         </span>{' '}
-        <span className="ml-2">AED</span>{' '}
+        <span className="ml-2">IQD</span>{' '}
       </div>
 
       <p className="text-xl 2xl:text-3xl">

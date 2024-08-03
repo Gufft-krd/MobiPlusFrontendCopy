@@ -388,11 +388,11 @@ export default function CompanyForm() {
                         </p>
                         <p
                           onClick={() => {
-                            setMoneyPlaceHolder('درهەم');
+                            setMoneyPlaceHolder('دینار');
                           }}
                           className="p-2 hover:bg-gray-100"
                         >
-                          درهەم
+                          دینار
                         </p>
                       </div>
                     )}
@@ -518,12 +518,12 @@ function PrintModal({
             </p>
             <p
               onClick={() => {
-                setMoneyPlaceHolder('درهەم');
-                setMoney('AED');
+                setMoneyPlaceHolder('دینار');
+                setMoney('IQD');
               }}
               className="p-2 hover:bg-gray-100"
             >
-              درهەم
+              دینار
             </p>
           </div>
         )}

@@ -511,12 +511,12 @@ export default function SellInvoiceForm() {
                   </p>
                   <p
                     onClick={() => {
-                      handleMoneyType('AUD');
-                      setMoneyTypePlaceholder('درهەم');
+                      handleMoneyType('IQD');
+                      setMoneyTypePlaceholder('دینار');
                     }}
                     className="p-2 text-2xl hover:bg-gray-100"
                   >
-                    درهەم
+                    دینار
                   </p>
                 </div>
               )}
@@ -576,14 +576,14 @@ export default function SellInvoiceForm() {
                     item_price:
                       moneyType == 'USD'
                         ? Number(getValues('item_price'))
-                        : (moneyType == 'AUD' &&
+                        : (moneyType == 'IQD' &&
                             Number(getValues('item_price')) / USDTOAED) ||
                           0,
                     total_price:
                       Number(getValues('item_quantity')) *
                       (moneyType == 'USD'
                         ? Number(getValues('item_price'))
-                        : (moneyType == 'AUD' &&
+                        : (moneyType == 'IQD' &&
                             Number(getValues('item_price')) / USDTOAED) ||
                           0),
                   },
@@ -852,11 +852,11 @@ export default function SellInvoiceForm() {
                           </p>
                           <p
                             onClick={() => {
-                              setMoneyPlaceHolder('درهەم');
+                              setMoneyPlaceHolder('دینار');
                             }}
                             className="p-2 hover:bg-gray-100"
                           >
-                            درهەم
+                            دینار
                           </p>
                         </div>
                       )}
@@ -1001,12 +1001,12 @@ function PrintModal({
             </p>
             <p
               onClick={() => {
-                setMoneyPlaceHolder('درهەم');
-                setMoney('AED');
+                setMoneyPlaceHolder('دینار');
+                setMoney('IQD');
               }}
               className="p-2 hover:bg-gray-100"
             >
-              درهەم
+              دینار
             </p>
           </div>
         )}

@@ -22,6 +22,7 @@ export default function SingleInvoice({
   MoneyValue,
   personsBalance,
   allCombinedData,
+  TotalBalanceWithoutMinus,
 }) {
   // const { id } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -126,6 +127,7 @@ export default function SingleInvoice({
                       data={data}
                       moneyType={moneyType}
                       personsBalance={personsBalance}
+                      TotalBalanceWithoutMinus={TotalBalanceWithoutMinus}
                     />
                   ) : lang === 'ku' ? (
                     <KurdishInvoiceGet
@@ -133,6 +135,7 @@ export default function SingleInvoice({
                       data={data}
                       moneyType={moneyType}
                       personsBalance={personsBalance}
+                      TotalBalanceWithoutMinus={TotalBalanceWithoutMinus}
                     />
                   ) : lang === 'ar' ? (
                     <ArabicInvoiceGet
@@ -140,6 +143,7 @@ export default function SingleInvoice({
                       data={data}
                       moneyType={moneyType}
                       personsBalance={personsBalance}
+                      TotalBalanceWithoutMinus={TotalBalanceWithoutMinus}
                     />
                   ) : null}
                 </>
@@ -1582,7 +1586,13 @@ function ArabicSell({ data, moneyType, USDTOAED, personsBalance }) {
   );
 }
 
-function EnglishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
+function EnglishInvoiceGet({
+  data,
+  moneyType,
+  USDTOAED,
+  personsBalance,
+  TotalBalanceWithoutMinus,
+}) {
   return (
     <>
       <div className="flex h-[383mm]  flex-col font-bold">
@@ -1644,8 +1654,10 @@ function EnglishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
             <p className="text-left text-5xl font-bold">
               {newFormatCurrency(
                 moneyType === 'IQD'
-                  ? personsBalance?.total * USDTOAED - data?.amount * USDTOAED
-                  : personsBalance?.total - data?.amount,
+                  ? personsBalance?.total * USDTOAED -
+                      (TotalBalanceWithoutMinus ? 0 : data?.amount * USDTOAED)
+                  : personsBalance?.total -
+                      (TotalBalanceWithoutMinus ? 0 : data?.amount),
                 moneyType,
               )}{' '}
             </p>
@@ -1685,7 +1697,13 @@ function EnglishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
   );
 }
 
-function KurdishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
+function KurdishInvoiceGet({
+  data,
+  moneyType,
+  USDTOAED,
+  personsBalance,
+  TotalBalanceWithoutMinus,
+}) {
   return (
     <>
       <div className="flex h-[383mm] flex-col font-bold">
@@ -1744,11 +1762,13 @@ function KurdishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
           </div>
           <div className="flex flex-col gap-3">
             <h1 className="text-right  text-6xl">بڕی پارەی ماوە</h1>
-            <p className="text-right text-5xl font-bold">
+            <p className="text-left text-5xl font-bold">
               {newFormatCurrency(
                 moneyType === 'IQD'
-                  ? personsBalance?.total * USDTOAED - data?.amount * USDTOAED
-                  : personsBalance?.total - data?.amount,
+                  ? personsBalance?.total * USDTOAED -
+                      (TotalBalanceWithoutMinus ? 0 : data?.amount * USDTOAED)
+                  : personsBalance?.total -
+                      (TotalBalanceWithoutMinus ? 0 : data?.amount),
                 moneyType,
               )}{' '}
             </p>
@@ -1790,7 +1810,13 @@ function KurdishInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
   );
 }
 
-function ArabicInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
+function ArabicInvoiceGet({
+  data,
+  moneyType,
+  USDTOAED,
+  personsBalance,
+  TotalBalanceWithoutMinus,
+}) {
   return (
     <>
       <div className="flex h-[383mm] flex-col font-bold">
@@ -1849,11 +1875,13 @@ function ArabicInvoiceGet({ data, moneyType, USDTOAED, personsBalance }) {
           </div>
           <div className="flex flex-col gap-3">
             <h1 className="text-right  text-6xl">مقدار المال المتبقي</h1>
-            <p className="text-right text-5xl font-bold">
+            <p className="text-left text-5xl font-bold">
               {newFormatCurrency(
                 moneyType === 'IQD'
-                  ? personsBalance?.total * USDTOAED - data?.amount * USDTOAED
-                  : personsBalance?.total - data?.amount,
+                  ? personsBalance?.total * USDTOAED -
+                      (TotalBalanceWithoutMinus ? 0 : data?.amount * USDTOAED)
+                  : personsBalance?.total -
+                      (TotalBalanceWithoutMinus ? 0 : data?.amount),
                 moneyType,
               )}{' '}
             </p>

@@ -126,6 +126,7 @@ function TransactionRow({
               ...item?.sellers,
               total: item?.sellers?.total - ingoing_purchase,
             }}
+            TotalBalanceWithoutMinus={true}
           />
         </div>
       )}

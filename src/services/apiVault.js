@@ -87,3 +87,19 @@ export async function getallaults() {
 
   return { data, count };
 }
+// create a function that gets a value then removes all datas from the table after removing adds one row with the datas we passed to it
+export async function RemoveAlladdVaults({ newItem, old }) {
+  let query = supabase.from('vault');
+
+  query = query.delete().in('id', old);
+
+  const { error } = await query;
+
+  if (error) {
+    console.error(error);
+
+    throw new Error('کڕیارەکە زیاد نەکرا');
+  }
+
+  return addVault(newItem);
+}

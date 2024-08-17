@@ -13,6 +13,8 @@ import FromToDateFilter from '../../ui/FromToDateFilter';
 import { Dropdown, MenuItem, DropdownItem } from '../../ui/Dropdown';
 import ResetFilter from '../../ui/ResetFillter';
 import { useGetPartners } from '../ownership/useGetPartners';
+import ConfirmDelete from '../../ui/ConfirmDelete';
+import { useDeleteAllVaultItem } from './useDeleteAllVault';
 
 export default function VaultTotal({
   isLoading,
@@ -26,8 +28,9 @@ export default function VaultTotal({
     isLoading: isPartnersLoading,
     count,
   } = useGetPartners();
-  if (isLoading) return <Spinner />;
+  const { isDeleting, deleteTransactionItem } = useDeleteAllVaultItem();
 
+  if (isLoading) return <Spinner />;
   const totalForshow = totalforfilter?.reduce(
     (total, item) => total + item.total,
     0,
@@ -121,12 +124,37 @@ export default function VaultTotal({
                   </Button>
                 </Modal.Open>
               )}
-
+              {isAdmin && (
+                <Modal.Open opens="clear">
+                  <Button type="button" variation="confirm" className="">
+                    سفر کردنەوەی سندوق
+                  </Button>
+                </Modal.Open>
+              )}
               <Modal.Window name="withdrowForm">
                 <WithdrowMoneyForm />
               </Modal.Window>
               <Modal.Window name="depositForm">
                 <DepositMoneyForm />
+              </Modal.Window>
+              <Modal.Window name="clear">
+                <ConfirmDelete
+                  resourceName={'هەموو داتاکان و کردنی بە یەک داتا'}
+                  disabled={isDeleting}
+                  onConfirm={() =>
+                    deleteTransactionItem({
+                      newItem: {
+                        withdrawal: totalForshow < 0 ? totalForshow : 0,
+                        deposit: totalForshow >= 0 ? totalForshow : 0,
+                        note: 'سفر کردنەوەی سندوق',
+                        total: totalForshow,
+                      },
+                      old: totalforfilter?.map(item => {
+                        return item.id;
+                      }),
+                    })
+                  }
+                />
               </Modal.Window>
             </Modal>
           </div>

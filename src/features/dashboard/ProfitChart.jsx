@@ -118,21 +118,25 @@ export function ProfitChart({
     {
       name: 'قزانج',
       uv:
-        (newCombinedData?.capitalItemSecond &&
-          newCombinedData?.capitalItem &&
-          (newCombinedData?.capitalItemSecond?.value || 0) -
-            (newCombinedData?.capitalItem[0]?.value || 0)) ||
-        0,
+        newCombinedData?.capitalItemSecond &&
+        newCombinedData?.capitalItem &&
+        (newCombinedData?.capitalItemSecond?.value || 0) -
+          (newCombinedData?.capitalItem[0]?.value ||
+            newCombinedData?.capitalItemSecond?.value),
     },
   ];
 
   useEffect(() => {
     if (newCombinedData?.capitalItemSecond && newCombinedData?.capitalItem) {
       setTodayMoney(newCombinedData?.capitalItemSecond?.value || 0);
-      setYesterdayMoney(newCombinedData?.capitalItem[0]?.value);
+      setYesterdayMoney(
+        newCombinedData?.capitalItem[0]?.value ||
+          newCombinedData?.capitalItemSecond?.value,
+      );
       setAllMoney(
         (newCombinedData?.capitalItemSecond?.value || 0) -
-          newCombinedData?.capitalItem[0]?.value,
+          (newCombinedData?.capitalItem[0]?.value ||
+            newCombinedData?.capitalItemSecond?.value),
       );
       // setTodayMoney(0)
     }
@@ -177,8 +181,9 @@ export function ProfitChart({
               <div className="ltr flex shrink-0 flex-row items-center justify-between whitespace-nowrap rounded-lg border-2 border-[#56CCF2] p-3 leading-tight">
                 <p className="text-3xl font-bold text-black">
                   {newFormatCurrency(
-                    newCombinedData?.capitalItem &&
-                      newCombinedData?.capitalItem[0]?.value,
+                    (newCombinedData?.capitalItemSecond &&
+                      newCombinedData?.capitalItemSecond?.value) ||
+                      0,
                   )}
                 </p>
                 <p className="text-3xl font-bold text-black">$</p>
@@ -186,11 +191,11 @@ export function ProfitChart({
               <div className="ltr flex shrink-0 flex-row items-center justify-between whitespace-nowrap rounded-lg border-2 border-[#30BF6E] p-3 leading-tight">
                 <p className="text-3xl font-bold text-black">
                   {newFormatCurrency(
-                    (newCombinedData?.capitalItemSecond &&
+                    newCombinedData?.capitalItemSecond &&
                       newCombinedData?.capitalItem &&
                       (newCombinedData?.capitalItemSecond?.value || 0) -
-                        newCombinedData?.capitalItem[0]?.value) ||
-                      0,
+                        (newCombinedData?.capitalItem[0]?.value ||
+                          newCombinedData?.capitalItemSecond?.value),
                   )}
                 </p>
                 <p className="text-3xl font-bold text-black">$</p>

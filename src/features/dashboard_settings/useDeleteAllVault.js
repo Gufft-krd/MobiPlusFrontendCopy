@@ -1,15 +1,13 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
-import { editVault as editVaultFromApi } from '../../services/apiVault';
-export function useEditVaultItems() {
+import { RemoveAlladdVaults } from '../../services/apiVault';
+export function useDeleteAllVaultItem() {
   const queryClient = useQueryClient();
 
-  const { isLoading: isEditing, mutate: editTransactionItem } = useMutation({
-    mutationFn: editVaultFromApi,
-    onSuccess: data => {
-      queryClient.refetchQueries();
-
-      toast.success('بە سەرکەوتوی دەستکاری کرا', {
+  const { isLoading: isDeleting, mutate: deleteTransactionItem } = useMutation({
+    mutationFn: RemoveAlladdVaults,
+    onSuccess: () => {
+      toast.success('کاڵاکە بە سەرکەوتویی سڕایەوە', {
         style: {
           padding: '16px',
           color: '#713200',
@@ -17,6 +15,8 @@ export function useEditVaultItems() {
           zIndex: 100,
         },
       });
+
+      queryClient.refetchQueries();
     },
     onError: err =>
       toast.error(err.message, {
@@ -28,5 +28,5 @@ export function useEditVaultItems() {
       }),
   });
 
-  return { isEditing, editTransactionItem };
+  return { isDeleting, deleteTransactionItem };
 }

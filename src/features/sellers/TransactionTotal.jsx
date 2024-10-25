@@ -22,6 +22,7 @@ export default function TransactionTotal({
   sellerid,
   totalforfilter,
   totalforfilterloading,
+  accountTotal,
 }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [showInvoice, setShowInvoice] = useState(false);
@@ -48,6 +49,7 @@ export default function TransactionTotal({
     }
     return ret;
   }
+
   return (
     <>
       <>
@@ -81,6 +83,7 @@ export default function TransactionTotal({
                     total + (item.ingoing_purchase - item.outgoing_purchase),
                   0,
                 )}
+              acountTotal={accountTotal}
             />
           </div>
         )}

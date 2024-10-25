@@ -23,6 +23,7 @@ export default function TransactionTotal({
   companyId,
   totalforfilter,
   totalforfilterloading,
+  accountTotal,
 }) {
   const [showInvoice, setShowInvoice] = useState(false);
   const [lang, setLang] = useState(null);
@@ -87,6 +88,7 @@ export default function TransactionTotal({
                       total + (item.ingoing_purchase - item.outgoing_purchase),
                     0,
                   )}
+                acountTotal={accountTotal}
               />
             </div>
           )}

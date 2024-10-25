@@ -96,6 +96,9 @@ export default function SellersTab() {
             sellerid={sellerid}
             totalforfilter={totalforfilter}
             totalforfilterloading={totalforfilterloading}
+            accountTotal={
+              sellerItem?.find(seller => seller.id == sellerid)?.total
+            }
           />
         </div>
         {/* oversea */}
@@ -135,6 +138,9 @@ export default function SellersTab() {
             arrayOfSellers={sellerItem}
             sellerid={sellerid}
             totalforfilter={totalforfilter}
+            accountTotal={
+              sellerItem?.find(seller => seller.id == sellerid)?.total
+            }
           />
         </div>
       </TabContent>

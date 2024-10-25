@@ -23,6 +23,7 @@ export default function SingleInvoice({
   personsBalance,
   allCombinedData,
   TotalBalanceWithoutMinus,
+  acountTotal,
 }) {
   // const { id } = useParams();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -164,6 +165,7 @@ export default function SingleInvoice({
                                 companyName={companyName}
                                 isCompany={isCompany}
                                 startAt={splitArray(allCombinedData, index + 1)}
+                                acountTotal={acountTotal}
                               />
                             );
                           },
@@ -176,6 +178,7 @@ export default function SingleInvoice({
                           companyName={companyName}
                           isCompany={isCompany}
                           startAt={0}
+                          acountTotal={acountTotal}
                         />
                       )}
                     </div>
@@ -192,6 +195,7 @@ export default function SingleInvoice({
                               moneyType={moneyType}
                               companyName={companyName}
                               isCompany={isCompany}
+                              acountTotal={acountTotal}
                             />
                           );
                         },
@@ -210,6 +214,7 @@ export default function SingleInvoice({
                               companyName={companyName}
                               isCompany={isCompany}
                               startAt={splitArray(allCombinedData, index + 1)}
+                              acountTotal={acountTotal}
                             />
                           );
                         },
@@ -289,7 +294,7 @@ function EnglishCompany({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-5xl font-bold">Madinat AL-Hawtf Company</h1>
             <div className=" w-fit text-left">
               <p>
-                Sirwan Nwe mall, Third Floor, 14-15
+                Sirwan Nwe mall, second floor, 14-15
                 <br /> Mawlawi St
               </p>
               <p>Sulaymaniyah</p>
@@ -479,7 +484,7 @@ function KurdishCompany({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-5xl font-bold">کۆمپانیای مدينة الهواتف </h1>
             <div className=" w-fit text-right">
               <p>
-                سیروانی نوێ نهۆمی سێیەم دوکانی ژمارە ١٤-١٥
+                سیروانی نوێ نهۆمی دووەم دوکانی ژمارە ١٤-١٥
                 <br /> شەقامی مەولەوی
               </p>
               <p>سلێمانی</p>
@@ -658,7 +663,7 @@ function ArabicCompany({ data, moneyType, USDTOAED, personsBalance }) {
             <h1 className="text-5xl font-bold">شرکة مدينة الهواتف</h1>
             <div className=" w-fit text-right">
               <p>
-                سيروان نوي مول، الطابق الثالث، 14-15
+                سيروان نوي مول، الطابق الثاني، 14-15
                 <br /> شارع المولوي
               </p>
               <p>السليمانية</p>
@@ -874,7 +879,7 @@ function EnglishSell({ data, moneyType, USDTOAED, personsBalance }) {
                 <h1 className="text-5xl font-bold">Madinat AL-Hawtf Company</h1>
                 <div className="w-fit text-left text-3xl">
                   <p>
-                    Sirwan Nwe mall, Third Floor, 14-15
+                    Sirwan Nwe mall, second floor, 14-15
                     <br /> Mawlawi St
                   </p>
                   <p>Sulaymaniyah</p>
@@ -1121,7 +1126,7 @@ function KurdishSell({ data, moneyType, USDTOAED, personsBalance }) {
                 <h1 className="text-5xl font-bold">کۆمپانیای مدينة الهواتف </h1>
                 <div className="w-fit text-right text-3xl">
                   <p>
-                    سیروانی نوێ نهۆمی سێیەم دوکانی ژمارە ١٤-١٥
+                    سیروانی نوێ نهۆمی دووەم دوکانی ژمارە ١٤-١٥
                     <br /> شەقامی مەولەوی
                   </p>
                   <p>سلێمانی</p>
@@ -1381,7 +1386,7 @@ function ArabicSell({ data, moneyType, USDTOAED, personsBalance }) {
                 <h1 className="text-5xl font-bold">شرکة مدينة الهواتف</h1>
                 <div className="w-fit text-right text-3xl">
                   <p>
-                    سيروان نوي مول، الطابق الثالث، 14-15
+                    سيروان نوي مول، الطابق الثاني، 14-15
                     <br /> شارع المولوي
                   </p>
                   <p>السليمانية</p>
@@ -1612,7 +1617,7 @@ function EnglishInvoiceGet({
             <h1 className="text-5xl font-bold">Madinat AL-Hawtf Company</h1>
             <div className="w-fit text-left text-3xl">
               <p>
-                Sirwan Nwe mall, Third Floor, 14-15
+                Sirwan Nwe mall, second floor, 14-15
                 <br /> Mawlawi St
               </p>
               <p>Sulaymaniyah</p>
@@ -1721,7 +1726,7 @@ function KurdishInvoiceGet({
             <h1 className="rtl text-5xl font-bold">کۆمپانیای مدينة الهواتف </h1>
             <div className="w-fit text-right text-3xl">
               <p>
-                سیروانی نوێ نهۆمی سێیەم دوکانی ژمارە ١٤-١٥
+                سیروانی نوێ نهۆمی دووەم دوکانی ژمارە ١٤-١٥
                 <br /> شەقامی مەولەوی
               </p>
               <p>سلێمانی</p>
@@ -1834,7 +1839,7 @@ function ArabicInvoiceGet({
             <h1 className="text-5xl font-bold">شرکة مدينة الهواتف</h1>
             <div className="w-fit text-right text-3xl">
               <p>
-                سيروان نوي مول، الطابق الثالث، 14-15
+                سيروان نوي مول، الطابق الثاني، 14-15
                 <br /> شارع المولوي
               </p>
               <p>السليمانية</p>
@@ -1923,7 +1928,14 @@ function ArabicInvoiceGet({
   );
 }
 
-function EnglishMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
+function EnglishMixed({
+  data,
+  moneyType,
+  USDTOAED,
+  companyName,
+  startAt,
+  acountTotal,
+}) {
   const currentDate = new Date();
   const options = { day: 'numeric', month: 'short', year: 'numeric' };
   const formattedDate = currentDate.toLocaleDateString('en-US', options);
@@ -1998,7 +2010,7 @@ function EnglishMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                 <h1 className="text-5xl font-bold">Madinat AL-Hawtf Company</h1>
                 <div className=" w-fit text-left">
                   <p>
-                    Sirwan Nwe mall, Third Floor, 14-15
+                    Sirwan Nwe mall, second floor, 14-15
                     <br /> Mawlawi St
                   </p>
                   <p>Sulaymaniyah</p>
@@ -2108,7 +2120,19 @@ function EnglishMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                         {Math.round(total)} {moneyType === 'IQD' ? 'IQD' : '$'}
                       </p>
                     </div>
-
+                    <div className="flex flex-row-reverse justify-between ">
+                      <p className="w-1/2 text-right text-3xl ">
+                        : Acount Total{' '}
+                      </p>
+                      <p className="text-3xl font-bold">
+                        {Math.round(
+                          moneyType === 'IQD'
+                            ? acountTotal * USDTOAED
+                            : acountTotal,
+                        )}
+                        {moneyType === 'IQD' ? 'IQD' : '$'}
+                      </p>
+                    </div>
                     {/* <div className="flex flex-row-reverse items-end gap-2 ">
                       <p className=" text-right text-3xl">Total In Words : </p>
                       <p className="text-3xl font-bold">
@@ -2143,7 +2167,14 @@ function EnglishMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
   );
 }
 
-function ArabicMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
+function ArabicMixed({
+  data,
+  moneyType,
+  USDTOAED,
+  companyName,
+  startAt,
+  acountTotal,
+}) {
   const currentDate = new Date();
   const options = { day: 'numeric', month: 'short', year: 'numeric' };
   const formattedDate = currentDate.toLocaleDateString('en-US', options);
@@ -2207,7 +2238,7 @@ function ArabicMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                 <h1 className="text-5xl font-bold">شرکة مدينة الهواتف </h1>
                 <div className=" w-fit text-right">
                   <p>
-                    سيروان نوي مول، الطابق الثالث، 14-15
+                    سيروان نوي مول، الطابق الثاني، 14-15
                     <br /> شارع المولوي
                   </p>
                   <p>السليمانية</p>
@@ -2319,7 +2350,19 @@ function ArabicMixed({ data, moneyType, USDTOAED, companyName, startAt }) {
                         {Math.round(total)} {moneyType === 'IQD' ? 'IQD' : '$'}
                       </p>
                     </div>
-
+                    <div className="flex flex-row-reverse justify-between ">
+                      <p className="w-1/2 text-right text-3xl ">
+                        : الرصيد الإجمالي للحساب
+                      </p>
+                      <p className="text-3xl font-bold">
+                        {Math.round(
+                          moneyType === 'IQD'
+                            ? acountTotal * USDTOAED
+                            : acountTotal,
+                        )}{' '}
+                        {moneyType === 'IQD' ? 'IQD' : '$'}
+                      </p>
+                    </div>
                     {/* <div className="flex flex-col items-start gap-2 ">
                       <p className="w-1/2 text-right text-3xl">الرصيد : </p>
                       <p className="text-2xl font-bold"></p>
@@ -2350,6 +2393,7 @@ function KurdishMixed({
   companyName,
   isCompany,
   startAt,
+  acountTotal,
 }) {
   const currentDate = new Date();
   const options = { day: 'numeric', month: 'short', year: 'numeric' };
@@ -2413,7 +2457,7 @@ function KurdishMixed({
                 <h1 className="text-5xl font-bold">کۆمپانیای مدينة الهواتف</h1>
                 <div className=" w-fit text-right">
                   <p>
-                    سیروانی نوێ نهۆمی سێیەم دوکانی ژمارە ١٤-١٥
+                    سیروانی نوێ نهۆمی دووەم دوکانی ژمارە ١٤-١٥
                     <br /> شەقامی مەولەوی
                   </p>
                   <p>سلێمانی</p>
@@ -2523,6 +2567,19 @@ function KurdishMixed({
                         {Math.round(total)} {moneyType === 'IQD' ? 'IQD' : '$'}
                       </p>
                     </div>
+                    <div className="flex flex-row-reverse justify-between ">
+                      <p className="w-1/2 text-right text-3xl ">
+                        : کۆی گشتی حساب
+                      </p>
+                      <p className="text-3xl font-bold">
+                        {Math.round(
+                          moneyType === 'IQD'
+                            ? acountTotal * USDTOAED
+                            : acountTotal,
+                        )}{' '}
+                        {moneyType === 'IQD' ? 'IQD' : '$'}
+                      </p>
+                    </div>
 
                     {/* <div className="flex flex-col items-start gap-2 ">
                       <p className="w-1/2 text-right text-3xl">
@@ -2598,7 +2655,7 @@ function BoxInvo({ data, USDTOAED }) {
                 <h1 className="text-5xl font-bold">کۆمپانیای مدينة الهواتف </h1>
                 <div className=" w-fit text-right">
                   <p>
-                    سیروانی نوێ نهۆمی سێیەم دوکانی ژمارە ١٤-١٥
+                    سیروانی نوێ نهۆمی دووەم دوکانی ژمارە ١٤-١٥
                     <br /> شەقامی مەولەوی
                   </p>
                   <p>سلێمانی</p>
@@ -2747,7 +2804,7 @@ function AllDebtInvo({ data, USDTOAED }) {
                 <h1 className="text-5xl font-bold">کۆمپانیای مدينة الهواتف </h1>
                 <div className=" w-fit text-right">
                   <p>
-                    سیروانی نوێ نهۆمی سێیەم دوکانی ژمارە ١٤-١٥
+                    سیروانی نوێ نهۆمی دووەم دوکانی ژمارە ١٤-١٥
                     <br /> شەقامی مەولەوی
                   </p>
                   <p>سلێمانی</p>
@@ -2915,7 +2972,7 @@ function GetDebtInvo({ data, USDTOAED, startAt }) {
                 <h1 className="text-5xl font-bold">کۆمپانیای مدينة الهواتف </h1>
                 <div className=" w-fit text-right">
                   <p>
-                    سیروانی نوێ نهۆمی سێیەم دوکانی ژمارە ١٤-١٥
+                    سیروانی نوێ نهۆمی دووەم دوکانی ژمارە ١٤-١٥
                     <br /> شەقامی مەولەوی
                   </p>
                   <p>سلێمانی</p>
@@ -3088,7 +3145,7 @@ function DashBoard({ data, USDTOAED }) {
             <h1 className="text-5xl font-bold">کۆمپانیای مدينة الهواتف </h1>
             <div className=" w-fit text-right">
               <p>
-                سیروانی نوێ نهۆمی سێیەم دوکانی ژمارە ١٤-١٥
+                سیروانی نوێ نهۆمی دووەم دوکانی ژمارە ١٤-١٥
                 <br /> شەقامی مەولەوی
               </p>
               <p>سلێمانی</p>
@@ -3254,7 +3311,7 @@ function InventoryInvo({ data, USDTOAED }) {
                 <h1 className="text-5xl font-bold">کۆمپانیای مدينة الهواتف </h1>
                 <div className=" w-fit text-right">
                   <p>
-                    سیروانی نوێ نهۆمی سێیەم دوکانی ژمارە ١٤-١٥
+                    سیروانی نوێ نهۆمی دووەم دوکانی ژمارە ١٤-١٥
                     <br /> شەقامی مەولەوی
                   </p>
                   <p>سلێمانی</p>
@@ -3403,7 +3460,7 @@ function ShareInvoice({
                 <h1 className="text-5xl font-bold">کۆمپانیای مدينة الهواتف </h1>
                 <div className="w-fit text-right text-3xl">
                   <p>
-                    سیروانی نوێ نهۆمی سێیەم دوکانی ژمارە ١٤-١٥
+                    سیروانی نوێ نهۆمی دووەم دوکانی ژمارە ١٤-١٥
                     <br /> شەقامی مەولەوی
                   </p>
                   <p>سلێمانی</p>

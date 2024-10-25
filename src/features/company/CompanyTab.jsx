@@ -32,7 +32,7 @@ export default function CompanyTab() {
   // getSellerItems({ filter: sellerType });
 
   if (isLoading) return <Spinner />;
-
+  console.log(companyItem?.find(company => company.id == companyId)?.total);
   return (
     <div className="">
       <div className="flex w-full justify-end">
@@ -45,7 +45,6 @@ export default function CompanyTab() {
         <Row className=" mb-6 !gap-4" type="horizontal">
           <div className=" flex flex-row flex-wrap gap-4">
             {isAdmin && <AddCompany />}
-
             {!isLoading && isAdmin && (
               <EditCompany
                 isLoading={isLoading}
@@ -53,7 +52,6 @@ export default function CompanyTab() {
                 companyId={companyId}
               />
             )}
-
             <TransactionFilter />
           </div>
           <CompanyList
@@ -80,6 +78,9 @@ export default function CompanyTab() {
           isLoading={transactionLoading}
           totalforfilter={totalforfilter}
           totalforfilterloading={totalforfilterloading}
+          accountTotal={
+            companyItem?.find(company => company.id == companyId)?.total
+          }
         />
       </div>
     </div>

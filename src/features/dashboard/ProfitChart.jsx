@@ -13,6 +13,7 @@ import {
 import { useGetEarnData } from '../ownership/useGetEarnData';
 import { formatCurrency, newFormatCurrency } from '../../utils/helpers';
 import { useGetCapitalForDashboard } from './useGetCapitalForDashboard';
+import { useGetCapitalForDashboardNew } from './useGetDashboardValue';
 // import {
 //   Chart as ChartJS,
 //   CategoryScale,
@@ -78,69 +79,31 @@ export function ProfitChart({
   setYesterdayMoney,
   setAllMoney,
 }) {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const { newCombinedData, isLoading, count } = useGetCapitalForDashboard();
-  // Get today's date
-  const today = new Date();
-
-  // Get yesterday's date
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-
-  // Format the dates as strings
-  const todayDate = today.toISOString().split('T')[0];
-  const yesterdayDate = yesterday.toISOString().split('T')[0];
-
-  // capitalStartDate=12%2F29%2F2023&capitalEndDate=01%2F02%2F2024
-
-  useEffect(() => {
-    searchParams.set('capitalEndDate', todayDate);
-    searchParams.set('capitalStartDate', yesterdayDate);
-    setSearchParams(searchParams);
-  }, []);
+  const { loadingForCapital, capitalItemData } = useGetCapitalForDashboardNew();
 
   const data = [
     {
       name: 'دوێنێ',
-      uv:
-        newCombinedData?.capitalItem &&
-        (newCombinedData?.capitalItem[0]?.value
-          ? newCombinedData?.capitalItem[0]?.value
-          : newCombinedData?.capitalItemSecond?.value),
+      uv: capitalItemData?.[0]?.yesterday_value || 0,
     },
     {
       name: 'ئەمڕۆ',
-      uv:
-        (newCombinedData?.capitalItemSecond &&
-          newCombinedData?.capitalItemSecond?.value) ||
-        0,
+      uv: capitalItemData?.[0]?.today_value || 0,
     },
     {
       name: 'قزانج',
-      uv:
-        newCombinedData?.capitalItemSecond &&
-        newCombinedData?.capitalItem &&
-        (newCombinedData?.capitalItemSecond?.value || 0) -
-          (newCombinedData?.capitalItem[0]?.value ||
-            newCombinedData?.capitalItemSecond?.value),
+      uv: capitalItemData?.[0]?.difference || 0,
     },
   ];
 
   useEffect(() => {
-    if (newCombinedData?.capitalItemSecond && newCombinedData?.capitalItem) {
-      setTodayMoney(newCombinedData?.capitalItemSecond?.value || 0);
-      setYesterdayMoney(
-        newCombinedData?.capitalItem[0]?.value ||
-          newCombinedData?.capitalItemSecond?.value,
-      );
-      setAllMoney(
-        (newCombinedData?.capitalItemSecond?.value || 0) -
-          (newCombinedData?.capitalItem[0]?.value ||
-            newCombinedData?.capitalItemSecond?.value),
-      );
+    if (capitalItemData) {
+      setTodayMoney(capitalItemData?.[0]?.today_value || 0);
+      setYesterdayMoney(capitalItemData?.[0]?.yesterday_value || 0);
+      setAllMoney(capitalItemData?.[0]?.difference);
       // setTodayMoney(0)
     }
-  }, [newCombinedData]);
+  });
 
   return (
     <>
@@ -170,33 +133,21 @@ export function ProfitChart({
             <div className="flex w-2/3 flex-col gap-3">
               <div className="ltr flex shrink-0 flex-row items-center justify-between whitespace-nowrap rounded-lg border-2 border-[#FEB834] p-3 leading-tight">
                 <p className="text-3xl font-bold text-black">
-                  {newFormatCurrency(
-                    (newCombinedData?.capitalItemSecond &&
-                      newCombinedData?.capitalItemSecond?.value) ||
-                      0,
-                  )}
+                  {newFormatCurrency(capitalItemData?.[0]?.today_value || 0)}
                 </p>
                 <p className="text-3xl font-bold text-black">$</p>
               </div>
               <div className="ltr flex shrink-0 flex-row items-center justify-between whitespace-nowrap rounded-lg border-2 border-[#56CCF2] p-3 leading-tight">
                 <p className="text-3xl font-bold text-black">
                   {newFormatCurrency(
-                    (newCombinedData?.capitalItemSecond &&
-                      newCombinedData?.capitalItemSecond?.value) ||
-                      0,
+                    capitalItemData?.[0]?.yesterday_value || 0,
                   )}
                 </p>
                 <p className="text-3xl font-bold text-black">$</p>
               </div>
               <div className="ltr flex shrink-0 flex-row items-center justify-between whitespace-nowrap rounded-lg border-2 border-[#30BF6E] p-3 leading-tight">
                 <p className="text-3xl font-bold text-black">
-                  {newFormatCurrency(
-                    newCombinedData?.capitalItemSecond &&
-                      newCombinedData?.capitalItem &&
-                      (newCombinedData?.capitalItemSecond?.value || 0) -
-                        (newCombinedData?.capitalItem[0]?.value ||
-                          newCombinedData?.capitalItemSecond?.value),
-                  )}
+                  {newFormatCurrency(capitalItemData?.[0]?.difference || 0)}
                 </p>
                 <p className="text-3xl font-bold text-black">$</p>
               </div>

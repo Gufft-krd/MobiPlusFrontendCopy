@@ -136,3 +136,14 @@ export async function getValueForDashboard({ filterStartDate, filterEndDate }) {
 
   return data;
 }
+export async function getValueForCapital() {
+  let query = supabase.rpc('get_daily_values_for_capital');
+
+  const { data, error } = await query;
+  if (error || !data) {
+    console.error(error);
+    throw new Error('Failed to fetch data');
+  }
+
+  return data;
+}

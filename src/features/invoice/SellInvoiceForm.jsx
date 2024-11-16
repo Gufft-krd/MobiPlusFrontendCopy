@@ -237,12 +237,12 @@ export default function SellInvoiceForm() {
     ) {
       return;
     }
-
+    const utcTime = new Date(data.current_date).toISOString();
     const newTransaction = {
       note: data.note || '',
       inventory_receipt: Number(lastItem[0]?.id ? lastItem[0]?.id : 1) + 1,
       returning_date: data.return_date ? data.return_date : data?.current_date,
-      transaction_date: data.current_date,
+      transaction_date: utcTime,
       outgoing_purchase:
         data?.incoming_money &&
         data?.incoming_money !== undefined &&
@@ -306,11 +306,12 @@ export default function SellInvoiceForm() {
     );
   }
   function changePrintValues(params) {
+    const utcTime = new Date(params.current_date).toISOString();
     const dataForPrint = {
       seller_name: sellerItem?.find(seller => seller.id == sellerid)
         ?.seller_name,
       note: params.note,
-      transaction_date: params.current_date,
+      transaction_date: utcTime,
       return_date: params.return_date ? params.return_date : undefined,
       ingoing_money:
         params?.incoming_money &&
@@ -687,7 +688,7 @@ export default function SellInvoiceForm() {
               <div className="input ltr flex flex-row justify-between">
                 <input
                   className="w-full [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
-                  type="date"
+                  type="datetime-local"
                   id="current_date"
                   autoComplete="current_date"
                   {...register('current_date', {

@@ -52,12 +52,13 @@ export default function GetMoneyForm() {
     if (!data.seller_name || !data.date || !data.money_number || !sellerid) {
       return;
     }
+    const utcTime = new Date(data.date).toISOString();
     const editedUser = {
       note: data.note,
       received_from: data.seller_name,
       inventory_receipt: Number(lastItem[0]?.id ? lastItem[0]?.id : 1) + 1,
       returning_date: data.date,
-      transaction_date: data.date,
+      transaction_date: utcTime,
       outgoing_purchase: data.money_number,
       total_purchase: data.money_number * -1,
       ingoing_purchase: 0,
@@ -71,12 +72,13 @@ export default function GetMoneyForm() {
     }
   }
   function changePrintValues(params) {
+    const utcTime = new Date(params.date).toISOString();
     const data = {
       receved_from: params.seller_name,
       amount: params.money_number,
       seller_name: sellerItem?.find(seller => seller.id == sellerid)
         ?.seller_name,
-      transaction_date: params.date,
+      transaction_date: utcTime,
       note: params.note,
       invoice_number: Number(lastItem[0]?.id ? lastItem[0]?.id : 1) + 1,
     };
@@ -175,7 +177,7 @@ export default function GetMoneyForm() {
             <div className="input ltr flex flex-row justify-between">
               <input
                 className="w-full "
-                type="date"
+                type="datetime-local"
                 id="date"
                 autoComplete="date"
                 {...register('date', {

@@ -27,6 +27,7 @@ import { useState } from 'react';
 import SingleInvoice from '../../pages/SingleInvoice';
 import { IoIosArrowDropdownCircle, IoIosCloseCircle } from 'react-icons/io';
 import Button from '../../ui/Button';
+import moment from 'moment';
 function TransactionRow({
   item: {
     id: transactionItamId,
@@ -229,7 +230,7 @@ function TransactionRow({
         <p>{formatCurrency(ingoing_purchase)}</p>
         <p>{inventory_receipt}</p>
         <p>{delimiter(note, 15)}</p>
-        <p>{transaction_date}</p>
+        <p>{moment(transaction_date).format('lll')}</p>
       </Table.Row>
     </div>
   );

@@ -40,8 +40,9 @@ export default function CompanyForm() {
       return;
     }
     const yesterday = sub(new Date(data?.reminder_date), { days: 2 });
+    const utcTime = new Date(data.date).toISOString();
     const editedUser = {
-      transaction_date: data?.date,
+      transaction_date: utcTime,
       ingoing_purchase:
         data?.money_number &&
         data?.money_number !== undefined &&
@@ -184,7 +185,7 @@ export default function CompanyForm() {
               <div className="input ltr flex flex-row justify-between">
                 <input
                   className="w-full text-xl "
-                  type="date"
+                  type="datetime-local"
                   id="date"
                   autoComplete="date"
                   {...register('date', {

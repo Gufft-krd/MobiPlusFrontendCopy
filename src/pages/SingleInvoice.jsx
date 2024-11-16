@@ -9,6 +9,7 @@ import useSettings from '../features/settings/useSettings';
 import { formatCurrency } from '../utils/helpers';
 import writtenNumber from 'written-number';
 import { PAGE_SIZE } from '../utils/constants';
+import moment from 'moment';
 export default function SingleInvoice({
   type,
   lang,
@@ -2058,7 +2059,7 @@ function EnglishMixed({
                             {i + 1}
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center   ">
-                            {item?.transaction_date}
+                            {moment(item?.transaction_date).format('lll')}
                           </th>
                           <th scope="row" className=" px-6 py-4 text-right   ">
                             {item?.note}
@@ -2286,7 +2287,7 @@ function ArabicMixed({
                             {i + 1}
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center   ">
-                            {item?.transaction_date}
+                            {moment(item?.transaction_date).format('lll')}
                           </th>
                           <th scope="row" className=" px-6 py-4 text-right   ">
                             {item?.note}
@@ -2505,7 +2506,7 @@ function KurdishMixed({
                             {i + 1}
                           </th>
                           <th scope="row" className=" px-6 py-4 text-center  ">
-                            {item?.transaction_date}
+                            {moment(item?.transaction_date).format('lll')}
                           </th>
                           <th scope="row" className=" px-6 py-4 text-right  ">
                             {item?.note}

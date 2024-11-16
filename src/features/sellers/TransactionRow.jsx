@@ -31,6 +31,7 @@ import SingleInvoice from '../../pages/SingleInvoice';
 // import { useEditInventoryItems } from './useEditInventoryItems';
 import { FaFileDownload } from 'react-icons/fa';
 import Button from '../../ui/Button';
+import moment from 'moment';
 function TransactionRow({
   item: {
     id: transactionItamId,
@@ -262,7 +263,9 @@ function TransactionRow({
 
       <p className="text-xl 2xl:text-3xl">{inventory_receipt}</p>
       <p className="text-xl 2xl:text-3xl">{delimiter(note, 10)}</p>
-      <p className="text-xl 2xl:text-3xl">{transaction_date}</p>
+      <p className="text-xl 2xl:text-3xl">
+        {moment(transaction_date).format('lll')}
+      </p>
     </Table.Row>
   );
 }

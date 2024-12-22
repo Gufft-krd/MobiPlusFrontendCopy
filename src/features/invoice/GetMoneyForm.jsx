@@ -16,6 +16,7 @@ import Form from '../../ui/Form';
 import { useAddSellerTransactionItem } from './useAddSellerTransactionItem';
 import { useGetLastItem } from './useGetLastItem';
 import { useGetPersonTotal } from './useGetPersonTotal';
+import moment from 'moment';
 export default function GetMoneyForm() {
   const { register, handleSubmit, formState, getValues, reset } = useForm();
   const { errors, isValid } = formState;
@@ -82,7 +83,10 @@ export default function GetMoneyForm() {
       note: params.note,
       invoice_number: Number(lastItem[0]?.id ? lastItem[0]?.id : 1) + 1,
     };
-    setPrintData(data);
+    setPrintData({
+      ...data,
+      transaction_date: moment(data?.transaction_date).format('lll'),
+    });
   }
   return (
     <Form onSubmit={handleSubmit(onFormSubmit)} className="">

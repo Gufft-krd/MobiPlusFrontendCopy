@@ -26,6 +26,7 @@ import { UpdateArrayOfItms } from '../../services/apiInventory';
 import useSettings from '../settings/useSettings';
 import { useGetInventoryItems } from './useGetInventoryItems';
 import { useGetPersonTotal } from './useGetPersonTotal';
+import moment from 'moment';
 export default function SellInvoiceForm() {
   const {
     register,
@@ -324,7 +325,10 @@ export default function SellInvoiceForm() {
       areayOfItems: transactionPurchese,
       invoice_number: Number(lastItem[0]?.id ? lastItem[0]?.id : 1) + 1,
     };
-    setPrintData(dataForPrint);
+    setPrintData({
+      ...dataForPrint,
+      transaction_date: moment(dataForPrint?.transaction_date).format('lll'),
+    });
   }
   function checkIfUserSelectedAndArrayIsEmpty() {
     if (

@@ -14,7 +14,7 @@ import { useAddCompanyTransaction } from '../company/useAddCompanyTransaction';
 import { sub } from 'date-fns';
 import { useGetLastCompanyItem } from './useGetLastcompanyItem';
 import { useGetCompanyTotal } from './useGetCompanyTotal';
-
+import moment from 'moment';
 export default function CompanyForm() {
   const { companyItem, isLoading, count } = useCompanyItem();
   const { register, handleSubmit, formState, getValues, reset } = useForm();
@@ -103,7 +103,7 @@ export default function CompanyForm() {
         params?.total_money !== ''
           ? params?.total_money
           : 0,
-      date: params?.date,
+      date: moment(params?.date).format('lll'),
     };
     setPrintData(data);
   }
